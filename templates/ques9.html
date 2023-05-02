@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+      }
+
+      form {
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        padding: 20px;
+        width: 300px;
+        margin: 0 auto;
+      }
+
+      label {
+        display: block;
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        font-size: 14px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+      }
+
+      button[type="submit"] {
+        background-color: #4caf50;
+        border: none;
+        color: #fff;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+
+      button[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+    </style>
+    <script>
+      function checkNULL() {
+        var x = document.forms["myForm"]["string"].value;
+        if (x == "" || x == null) {
+          alert("Empty String.");
+          return false;
+        }
+      }
+    </script>
+    <meta charset="utf-8" />
+    <title>List of Words</title>
+  </head>
+  <body>
+    <div style="display: flex; justify-content: center">
+      <form
+        name="form"
+        method="post"
+        action="/list"
+        onsubmit="return checkNULL()"
+        required
+      >
+      <h1>Enter the sentence</h1>
+      <ul style="list-style-type: none">
+        <li>
+        <label for="sentence"></label> 
+        </li>
+        <li>
+        <textarea id="sentence" name="sentence" rows="30" cols="30"></textarea>
+        </li>
+        <li>
+        <input type="submit" value="print" />
+        </li>
+      </form>
+    </div>
+  </body>
+</html>

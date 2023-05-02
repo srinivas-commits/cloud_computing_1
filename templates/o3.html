@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JSON to HTML Table</title>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>Weather basic information</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for k, v in weather.items()%}
+        <tr>
+          <td>{{k}}</td>
+          <td>{{v}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Wind information</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for k, v in winds.items()%}
+        <tr>
+          <td>{{k}}</td>
+          <td>{{v}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
